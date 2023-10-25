@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+
+class VerticalLine extends StatelessWidget {
+  const VerticalLine({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 16),
+      child: Container(
+        width: 1,
+        height: 25,
+        color: const Color.fromARGB(255, 183, 177, 177),
+      ),
+    );
+  }
+}
