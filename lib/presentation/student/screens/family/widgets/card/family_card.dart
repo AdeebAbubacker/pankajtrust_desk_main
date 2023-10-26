@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pankajtrust_app/checkboxdata.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/checkbox_data.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/labulcumNumericalText.dart';
@@ -34,14 +35,19 @@ class _FamilyCardState extends State<FamilyCard> {
         // LabelcumDropDownMenu(mytext: 'Name'),
         LabelcumTextFormField(mytext: 'Name'),
         const HeightSpacer(height: 14),
-        const CheckBoxData(label: 'Alive', width: 130),
-        const HeightSpacer(height: 14),
-        const CheckBoxData(label: 'Disabled / Bedriden', width: 26),
+        // const CheckBoxData(label: 'Alive', width: 130),
+        // const HeightSpacer(height: 14),
+        // const CheckBoxData(label: 'Disabled / Bedriden', width: 26),
+        CheckBoxWorkout(
+          width: 46,
+        ),
         const HeightSpacer(height: 14),
         // LabelcumDropDownMenu(mytext: 'Occupation/Job'),
         LabelcumDropOccupation(mytext: 'Occupation/Job'),
         const HeightSpacer(height: 14),
-        LabelcumNumericalText(mytext: 'Monthly Income',),
+        LabelcumNumericalText(
+          mytext: 'Monthly Income',
+        ),
         const LineDivider(),
         const Padding(
           padding: EdgeInsets.only(top: 5, bottom: 12),
@@ -55,7 +61,9 @@ class _FamilyCardState extends State<FamilyCard> {
         const HeightSpacer(height: 14),
         LabelcumDropDownMenu(mytext: 'Occupation/Job'),
         const HeightSpacer(height: 14),
-       LabelcumNumericalText(mytext: 'Monthly Income',),
+        LabelcumNumericalText(
+          mytext: 'Monthly Income',
+        ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -88,8 +96,9 @@ class _FamilyCardState extends State<FamilyCard> {
         LabelcumDropDownMenu(mytext: 'Occupation/Job'),
         const HeightSpacer(height: 14),
         // LabelcumDropDownMenu(mytext: 'Monthly Income'),
-        LabelcumNumericalText(mytext: 'Monthly Income',),
-   
+        LabelcumNumericalText(
+          mytext: 'Monthly Income',
+        ),
       ]),
     );
   }

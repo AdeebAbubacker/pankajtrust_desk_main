@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pankajtrust_app/presentation/bottomSheet.dart';
 import 'package:pankajtrust_app/presentation/student/screens/homescreen/horizontalStepper.dart';
-import 'package:pankajtrust_app/presentation/validation.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           // useMaterial3: true,
           ),
-       home: const MyCustomStepper(),
+       home: const MyHomePage(),
     );
   }
 }
-
