@@ -237,7 +237,7 @@ class _CustomStepperState extends State<CustomStepper> {
 
 class AddStep {
   final String title;
-  final Widget content;
+  final content;
 
   AddStep({
     required this.title,

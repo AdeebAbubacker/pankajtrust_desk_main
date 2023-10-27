@@ -93,11 +93,13 @@ class _MyCustomStepperState extends State<MyCustomStepper> {
           ),
           AddStep(title: 'ddd', content: const FamilyScreen()),
           AddStep(
-              title: 'ddd',
-              content: Container(
-                  width: 100,
-                  height: 20,
-                  color: const Color.fromARGB(255, 168, 34, 34))),
+            title: 'ddd',
+            content: Container(
+              width: 100,
+              height: 20,
+              color: const Color.fromARGB(255, 168, 34, 34),
+            ),
+          ),
           AddStep(
               title: 'ddd',
               content: Container(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/checkboxdata.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
+import 'package:pankajtrust_app/presentation/bottomSheet.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/checkbox_data.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/labulcumNumericalText.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/lineDivider.dart';
@@ -42,7 +43,8 @@ class _FamilyCardState extends State<FamilyCard> {
           width: 46,
         ),
         const HeightSpacer(height: 14),
-        LabelcumDropOccupation(mytext: 'Occupation/Job'),
+        // LabelcumDropOccupation(mytext: 'Occupation/Job'),
+        OccupationWithSheet(),
         const HeightSpacer(height: 14),
         LabelcumNumericalText(
           mytext: 'Monthly Income',
