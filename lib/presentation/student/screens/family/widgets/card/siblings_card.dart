@@ -10,22 +10,22 @@ import 'package:pankajtrust_app/presentation/student/widgets/label_cum_dropdownm
 import 'package:pankajtrust_app/presentation/student/widgets/labelcumTextFormField.dart';
 import 'package:pankajtrust_app/presentation/student/widgets/spacer_height.dart';
 
-class FamilyCard extends StatefulWidget {
+class SiblingsCard extends StatefulWidget {
   final Widget siblings;
   bool mybool;
 
   final width;
-  FamilyCard({
+  SiblingsCard({
     super.key,
     this.width,
     required this.mybool, this.siblings = const Text(''),
   });
 
   @override
-  State<FamilyCard> createState() => _FamilyCardState();
+  State<SiblingsCard> createState() => _SiblingsCardState();
 }
 
-class _FamilyCardState extends State<FamilyCard> {
+class _SiblingsCardState extends State<SiblingsCard> {
   
   @override
   Widget build(BuildContext context) {

@@ -73,7 +73,7 @@ class _OccupationWithSheetState extends State<OccupationWithSheet> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Padding(
-                            padding: EdgeInsets.only(top: 20, bottom: 20),
+                            padding: EdgeInsets.only(top: 20, bottom: 1),
                             child: Text(
                               'Occupation Details',
                               style: TextStyle(
@@ -83,13 +83,14 @@ class _OccupationWithSheetState extends State<OccupationWithSheet> {
                             ),
                           ),
                           IconButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              icon: const Icon(
-                                Icons.close,
-                                color: kredColor,
-                              ))
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            icon: const Icon(
+                              Icons.close,
+                              color: kredColor,
+                            ),
+                          )
                         ],
                       ),
                     ),
@@ -104,6 +105,8 @@ class _OccupationWithSheetState extends State<OccupationWithSheet> {
                         children: [
                           Expanded(
                             child: TextField(
+                              style: const TextStyle(
+                                  color: kblackColor, fontSize: 14),
                               controller: textController,
                               decoration: InputDecoration(
                                 hintText: 'Search Occupation / Job',
@@ -246,22 +249,24 @@ class _OccupationWithSheetState extends State<OccupationWithSheet> {
                         width: 1.0,
                       ),
                       color: const Color.fromARGB(255, 255, 255, 255)),
-                  child: TextFormField(
-                    style: const TextStyle(
-                      color: Color.fromARGB(
-                          255, 92, 92, 92), // Change text color to blue
-                      fontSize: 14, // Change font size
-                      // You can add more style properties as needed
-                    ),
-                    readOnly: true,
-                    maxLines: 1,
-                    controller: textController,
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-
-                      suffixIcon:
-                          Icon(Icons.arrow_drop_down, color: Colors.black),
-                      // Apply custom style to the text
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 14),
+                    child: TextFormField(
+                      style: const TextStyle(
+                        color: Color.fromARGB(
+                            255, 92, 92, 92), // Change text color to blue
+                        fontSize: 14, // Change font size
+                        // You can add more style properties as needed
+                      ),
+                      readOnly: true,
+                      maxLines: 1,
+                      controller: textController,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        suffixIcon:
+                            Icon(Icons.arrow_drop_down, color: Colors.black),
+                        // Apply custom style to the text
+                      ),
                     ),
                   ),
                 ),

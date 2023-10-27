@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pankajtrust_app/core/constant/constants.dart';
 
 class InpuText extends StatefulWidget {
   final int maxlines;
@@ -16,12 +17,14 @@ class _InpuTextState extends State<InpuText> {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
         SizedBox(
-          child: TextField(
-            maxLines: widget.maxlines,
-            decoration: const InputDecoration(border: InputBorder.none),
+          child: kpadding14(
+            child: TextField(
+              maxLines: widget.maxlines,
+              decoration: const InputDecoration(border: InputBorder.none),
+            ),
           ),
         ),
       ],

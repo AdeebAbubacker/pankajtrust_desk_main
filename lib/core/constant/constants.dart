@@ -47,6 +47,27 @@ const applicationticonColor = Color.fromARGB(255, 62, 24, 150);
 //     fontWeight: FontWeight.w500);
 
 const kfamiltTitleTextColor = TextStyle(
-    fontSize: 15,
-    color: Color(0XFF542a92),
-    fontWeight: FontWeight.w500);
+    fontSize: 15, color: Color(0XFF542a92), fontWeight: FontWeight.w500);
+
+// -------------------- padding --------------------------------------------------------------
+
+const kPadding14 = Padding(padding: const EdgeInsets.only(left: 14));
+
+
+class kpadding14 extends StatelessWidget {
+  final Widget child;
+  const kpadding14({
+    super.key,
+required this.child,
+  });
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 14),
+      child: child
+    );
+  }
+}

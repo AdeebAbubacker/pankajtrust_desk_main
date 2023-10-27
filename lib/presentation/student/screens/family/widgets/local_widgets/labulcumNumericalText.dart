@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pankajtrust_app/core/constant/constants.dart';
 import 'package:pankajtrust_app/presentation/student/widgets/input_label.dart';
 
 // ignore: must_be_immutable
@@ -26,10 +27,12 @@ class LabelcumNumericalText extends StatelessWidget {
                 width: 1.0,
               ),
               color: const Color.fromARGB(255, 255, 255, 255)),
-          child: TextField(
-            keyboardType: TextInputType.number,
-            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-            decoration: const InputDecoration(border: InputBorder.none),
+          child: kpadding14(
+            child: TextField(
+              keyboardType: TextInputType.number,
+              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+              decoration: const InputDecoration(border: InputBorder.none),
+            ),
           ),
         ),
       ],

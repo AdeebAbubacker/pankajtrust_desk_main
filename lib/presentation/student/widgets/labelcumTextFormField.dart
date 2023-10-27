@@ -38,6 +38,7 @@ class LabelcumTextFormField extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  maxLines: 1,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "name is mandatory";
