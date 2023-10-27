@@ -243,30 +243,39 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              child: const Text("Show bottom sheet"),
-              onPressed: () {
-                _showModal(context);
-              },
-            ),
-            InkWell(
-              onTap: () {
-                _showModal(context);
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  readOnly: true,
-                  controller: textController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(7)),
+            Stack(
+              children: [
+                InkWell(
+                  onTap: () {
+                    _showModal(context);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      readOnly: true,
+                      controller: textController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(7)),
+                        ),
+                        suffixIcon:
+                            Icon(Icons.arrow_drop_down, color: Colors.black),
+                      ),
                     ),
-                    suffixIcon:
-                        Icon(Icons.arrow_drop_down, color: Colors.black),
                   ),
                 ),
-              ),
+                InkWell(
+                    onTap: () {
+                      _showModal(context);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: 370,
+                        height: 60,
+                      ),
+                    )),
+              ],
             ),
           ],
         ),
@@ -292,7 +301,7 @@ class CloseIconButton extends StatelessWidget {
         child: const Padding(
           padding: EdgeInsets.all(10.0),
           child: Icon(
-            FontAwesomeIcons.times,
+            FontAwesomeIcons.xmark,
             size: 14,
             color: Colors.white,
           ),

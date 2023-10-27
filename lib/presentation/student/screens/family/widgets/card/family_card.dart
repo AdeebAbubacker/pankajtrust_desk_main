@@ -42,7 +42,6 @@ class _FamilyCardState extends State<FamilyCard> {
           width: 46,
         ),
         const HeightSpacer(height: 14),
-        // LabelcumDropDownMenu(mytext: 'Occupation/Job'),
         LabelcumDropOccupation(mytext: 'Occupation/Job'),
         const HeightSpacer(height: 14),
         LabelcumNumericalText(
