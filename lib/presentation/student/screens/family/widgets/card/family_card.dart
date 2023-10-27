@@ -5,8 +5,8 @@ import 'package:pankajtrust_app/presentation/bottomSheet.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/checkbox_data.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/labulcumNumericalText.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/lineDivider.dart';
+import 'package:pankajtrust_app/presentation/student/widgets/input_label.dart';
 import 'package:pankajtrust_app/presentation/student/widgets/label_cum_dropdownmenu.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/labelcumOccupation.dart';
 import 'package:pankajtrust_app/presentation/student/widgets/labelcumTextFormField.dart';
 import 'package:pankajtrust_app/presentation/student/widgets/spacer_height.dart';
 
@@ -33,18 +33,15 @@ class _FamilyCardState extends State<FamilyCard> {
           padding: EdgeInsets.only(top: 5, bottom: 12),
           child: Text('Father', style: kfamiltTitleTextColor),
         ),
-        // LabelcumDropDownMenu(mytext: 'Name'),
+
         LabelcumTextFormField(mytext: 'Name'),
         const HeightSpacer(height: 14),
-        // const CheckBoxData(label: 'Alive', width: 130),
-        // const HeightSpacer(height: 14),
-        // const CheckBoxData(label: 'Disabled / Bedriden', width: 26),
-        CheckBoxWorkout(
+        const CheckBoxWorkout(
           width: 46,
         ),
         const HeightSpacer(height: 14),
-        // LabelcumDropOccupation(mytext: 'Occupation/Job'),
-        OccupationWithSheet(),
+        InputLabel(mytext: 'Occupation / Job'),
+        const OccupationWithSheet(),
         const HeightSpacer(height: 14),
         LabelcumNumericalText(
           mytext: 'Monthly Income',
@@ -60,7 +57,8 @@ class _FamilyCardState extends State<FamilyCard> {
         const HeightSpacer(height: 14),
         const CheckBoxData(label: 'Disabled / Bedriden', width: 26),
         const HeightSpacer(height: 14),
-        LabelcumDropDownMenu(mytext: 'Occupation/Job'),
+        InputLabel(mytext: 'Occupation / Job'),
+        const OccupationWithSheet(),
         const HeightSpacer(height: 14),
         LabelcumNumericalText(
           mytext: 'Monthly Income',
@@ -94,7 +92,8 @@ class _FamilyCardState extends State<FamilyCard> {
         const HeightSpacer(height: 14),
         const CheckBoxData(label: 'Disabled / Bedriden', width: 26),
         const HeightSpacer(height: 14),
-        LabelcumDropDownMenu(mytext: 'Occupation/Job'),
+        InputLabel(mytext: 'Occupation / Job'),
+        const OccupationWithSheet(),
         const HeightSpacer(height: 14),
         // LabelcumDropDownMenu(mytext: 'Monthly Income'),
         LabelcumNumericalText(
