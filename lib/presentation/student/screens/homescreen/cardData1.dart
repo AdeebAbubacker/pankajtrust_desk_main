@@ -3,7 +3,7 @@
 // ignore: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/presentation/widgets/enterDOB.dart';
-import 'package:pankajtrust_app/presentation/widgets/enterSex.dart';
+import 'package:pankajtrust_app/presentation/widgets/enterRadiobtn.dart';
 import 'package:pankajtrust_app/presentation/widgets/label_cum_dropdownmenu.dart';
 import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
@@ -28,7 +28,13 @@ class _CardData1State extends State<CardData1> {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         LabelcumDropDownMenu(mytext: 'Name'),
         const HeightSpacer(height: 14),
-        const EnterSex(),
+        EnterRadioBtn(
+          steps: [
+            Content(choiceLabel: 'Male'),
+            Content(choiceLabel: 'Female'),
+          ],
+          title: 'Gender',
+        ),
         const HeightSpacer(height: 14),
         const DOBPicker(),
         const HeightSpacer(height: 14),
