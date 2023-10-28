@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/core/colors/colors.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
-import 'package:pankajtrust_app/presentation/widgets/label_cum_dropdownmenu.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_inputText.dart';
 import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
 class BankMainLayout extends StatefulWidget {
@@ -40,7 +40,7 @@ class _BankMainLayoutState extends State<BankMainLayout> {
               ],
             ),
             width: 370,
-            height: 489,
+            height: 499,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -91,13 +91,13 @@ class _BankCardState extends State<BankCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          LabelcumDropDownMenu(mytext: 'Enter full name'),
+          LabelInputText(mytext: 'Enter full name'),
           const HeightSpacer(height: 14),
-          LabelcumDropDownMenu(mytext: 'Enter Address', maxlines: 3),
+          LabelInputText(mytext: 'Enter Address', maxlines: 3),
           const HeightSpacer(height: 14),
-          LabelcumDropDownMenu(mytext: 'Enter Bank Name'),
+          LabelInputText(mytext: 'Enter Bank Name'),
           const HeightSpacer(height: 14),
-          LabelcumDropDownMenu(mytext: 'Enter Branch name with IFSC'),
+          LabelInputText(mytext: 'Enter Branch name with IFSC'),
           const HeightSpacer(height: 14),
         ],
       ),

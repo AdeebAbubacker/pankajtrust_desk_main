@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/presentation/widgets/checkboxdata.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
-import 'package:pankajtrust_app/presentation/widgets/bottomSheet.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_bottomSheet.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/checkbox_data.dart';
-import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/labulcumNumericalText.dart';
+import 'package:pankajtrust_app/presentation/widgets/labul_NumericalText.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/lineDivider.dart';
 import 'package:pankajtrust_app/presentation/widgets/input_label.dart';
-import 'package:pankajtrust_app/presentation/widgets/label_cum_dropdownmenu.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_inputText.dart';
 import 'package:pankajtrust_app/presentation/widgets/labelcumTextFormField.dart';
 import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
@@ -48,13 +48,13 @@ class _FamilyCardState extends State<FamilyCard> {
           InputLabel(mytext: 'Occupation / Job'),
           const OccupationWithSheet(),
           const HeightSpacer(height: 14),
-          LabelcumNumericalText(mytext: 'Monthly Income'),
+          LabelNumericalText(mytext: 'Monthly Income'),
           const LineDivider(),
           const Padding(
             padding: EdgeInsets.only(top: 5, bottom: 12),
             child: Text('Mother', style: kfamiltTitleTextColor),
           ),
-          LabelcumDropDownMenu(mytext: 'Name'),
+          LabelInputText(mytext: 'Name'),
           const HeightSpacer(height: 14),
           const CheckBoxData(label: 'Alive', width: 130),
           const HeightSpacer(height: 14),
@@ -63,7 +63,7 @@ class _FamilyCardState extends State<FamilyCard> {
           InputLabel(mytext: 'Occupation / Job'),
           const OccupationWithSheet(),
           const HeightSpacer(height: 14),
-          LabelcumNumericalText(mytext: 'Monthly Income'),
+          LabelNumericalText(mytext: 'Monthly Income'),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -87,7 +87,7 @@ class _FamilyCardState extends State<FamilyCard> {
             padding: EdgeInsets.only(top: 5, bottom: 12),
             child: Text('Guardian', style: kfamiltTitleTextColor),
           ),
-          LabelcumDropDownMenu(mytext: 'Name'),
+          LabelInputText(mytext: 'Name'),
           const HeightSpacer(height: 14),
           const CheckBoxData(label: 'Alive', width: 130),
           const HeightSpacer(height: 14),
@@ -96,8 +96,8 @@ class _FamilyCardState extends State<FamilyCard> {
           InputLabel(mytext: 'Occupation / Job'),
           const OccupationWithSheet(),
           const HeightSpacer(height: 14),
-          // LabelcumDropDownMenu(mytext: 'Monthly Income'),
-          LabelcumNumericalText(mytext: 'Monthly Income'),
+          // LabelInputText(mytext: 'Monthly Income'),
+          LabelNumericalText(mytext: 'Monthly Income'),
           widget.siblings
         ],
       ),

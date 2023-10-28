@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/presentation/student/screens/homescreen/cardData1.dart';
 import 'package:pankajtrust_app/presentation/widgets/cardMainLayout.dart';
 import 'package:pankajtrust_app/presentation/widgets/enterDOB.dart';
-import 'package:pankajtrust_app/presentation/widgets/enterRadiobtn.dart';
-import 'package:pankajtrust_app/presentation/widgets/label_cum_dropdownmenu.dart';
+import 'package:pankajtrust_app/presentation/widgets/horizontalRadioBtn.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_inputText.dart';
 import 'package:pankajtrust_app/presentation/widgets/myAppBar.dart';
 
 import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';

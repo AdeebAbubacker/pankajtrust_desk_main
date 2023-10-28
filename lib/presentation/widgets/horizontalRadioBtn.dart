@@ -4,22 +4,22 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
 
-class EnterRadioBtn extends StatefulWidget {
+class horizontalRadioBtn extends StatefulWidget {
   String? title;
   int groupValue;
   final List<Content> steps;
 
-  EnterRadioBtn(
+  horizontalRadioBtn(
       {super.key,
       required this.title,
       this.groupValue = 0,
       required this.steps});
 
   @override
-  _EnterRadioBtnState createState() => _EnterRadioBtnState();
+  _horizontalRadioBtnState createState() => _horizontalRadioBtnState();
 }
 
-class _EnterRadioBtnState extends State<EnterRadioBtn> {
+class _horizontalRadioBtnState extends State<horizontalRadioBtn> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -31,9 +31,9 @@ class _EnterRadioBtnState extends State<EnterRadioBtn> {
             style: kCardContentStyle,
           ),
         ),
-        const SizedBox(
-          width: 40,
-        ),
+        // const SizedBox(
+        //   width: 40,
+        // ),
         Row(
           children: widget.steps.asMap().entries.map((entry) {
             final index = entry.key + 1;

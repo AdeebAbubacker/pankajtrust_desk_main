@@ -4,11 +4,11 @@ import 'package:pankajtrust_app/core/constant/constants.dart';
 import 'package:pankajtrust_app/presentation/widgets/input_label.dart';
 
 // ignore: must_be_immutable
-class LabelcumNumericalText extends StatelessWidget {
+class LabelNumericalText extends StatelessWidget {
   final int maxlines;
   String mytext;
   final double padding;
-  LabelcumNumericalText(
+  LabelNumericalText(
       {this.maxlines = 1, super.key, required this.mytext, this.padding = 5});
 
   @override

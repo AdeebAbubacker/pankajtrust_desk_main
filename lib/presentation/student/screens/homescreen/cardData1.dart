@@ -3,8 +3,10 @@
 // ignore: must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/presentation/widgets/enterDOB.dart';
-import 'package:pankajtrust_app/presentation/widgets/enterRadiobtn.dart';
-import 'package:pankajtrust_app/presentation/widgets/label_cum_dropdownmenu.dart';
+import 'package:pankajtrust_app/presentation/widgets/horizontalRadioBtn.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_email.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_inputText.dart';
+import 'package:pankajtrust_app/presentation/widgets/labul_NumericalText.dart';
 import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
 class CardData1 extends StatefulWidget {
@@ -26,9 +28,9 @@ class _CardData1State extends State<CardData1> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        LabelcumDropDownMenu(mytext: 'Name'),
+        LabelInputText(mytext: 'Name'),
         const HeightSpacer(height: 14),
-        EnterRadioBtn(
+        horizontalRadioBtn(
           steps: [
             Content(choiceLabel: 'Male'),
             Content(choiceLabel: 'Female'),
@@ -38,14 +40,15 @@ class _CardData1State extends State<CardData1> {
         const HeightSpacer(height: 14),
         const DOBPicker(),
         const HeightSpacer(height: 14),
-        LabelcumDropDownMenu(
+        LabelInputText(
           mytext: 'Address',
           maxlines: 3,
         ),
         const HeightSpacer(height: 14),
-        LabelcumDropDownMenu(mytext: 'Phone no'),
+        LabelNumericalText(mytext: 'Phone no'),
         const HeightSpacer(height: 14),
-        LabelcumDropDownMenu(mytext: 'email'),
+        // LabelInputText(mytext: 'email'),
+        LabelEmail(labelText: 'email'),
       ]),
     );
   }

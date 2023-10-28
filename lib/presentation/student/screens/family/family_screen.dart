@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/card/family_card.dart';
+import 'package:pankajtrust_app/presentation/student/screens/family/widgets/card/siblings_card.dart';
 import 'package:pankajtrust_app/presentation/widgets/cardMainLayout.dart';
 
 class FamilyScreen extends StatefulWidget {
@@ -43,9 +44,9 @@ class _FamilyScreenState extends State<FamilyScreen> {
             ? Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: CardMainLayout(
-                  CardMainLayoutheight: 1500,
-                  title: 'Family Details',
-                  cardData: FamilyCard(
+                  CardMainLayoutheight: 210,
+                  title: 'Siblings Details',
+                  cardData: SiblingsCard(
                     mybool: false,
                   ),
                 ),
