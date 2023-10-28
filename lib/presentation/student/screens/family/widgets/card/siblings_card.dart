@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:pankajtrust_app/checkboxdata.dart';
+import 'package:pankajtrust_app/presentation/widgets/checkboxdata.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
-import 'package:pankajtrust_app/presentation/bottomSheet.dart';
+import 'package:pankajtrust_app/presentation/widgets/bottomSheet.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/checkbox_data.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/labulcumNumericalText.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/lineDivider.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/input_label.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/label_cum_dropdownmenu.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/labelcumTextFormField.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/spacer_height.dart';
+import 'package:pankajtrust_app/presentation/widgets/input_label.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_cum_dropdownmenu.dart';
+import 'package:pankajtrust_app/presentation/widgets/labelcumTextFormField.dart';
+import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
 class SiblingsCard extends StatefulWidget {
   final Widget siblings;

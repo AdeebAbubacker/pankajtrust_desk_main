@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/input_label.dart';
+import 'package:pankajtrust_app/presentation/widgets/input_label.dart';
 
 // ignore: must_be_immutable
 class LabelcumTextFormField extends StatelessWidget {

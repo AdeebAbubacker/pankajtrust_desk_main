@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/input_label.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/occupation_menu.dart';
-
+import 'package:pankajtrust_app/presentation/widgets/drop_down_menu.dart';
+import 'package:pankajtrust_app/presentation/widgets/input_label.dart';
 
 // ignore: must_be_immutable
-class LabelcumDropOccupation extends StatelessWidget {
+class LabelcumDropDownMenu extends StatelessWidget {
+  final int maxlines;
   String mytext;
   final double padding;
-  LabelcumDropOccupation({super.key, required this.mytext, this.padding = 5});
+  LabelcumDropDownMenu({this.maxlines = 1, super.key, required this.mytext, this.padding = 5});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class LabelcumDropOccupation extends StatelessWidget {
                   width: 1.0,
                 ),
                 color: const Color.fromARGB(255, 255, 255, 255)),
-            child: const OccupationMenu()),
+            child:  InpuText(maxlines: maxlines,)),
       ],
     );
   }

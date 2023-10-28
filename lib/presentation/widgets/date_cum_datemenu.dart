@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/input_label.dart';
+import 'package:pankajtrust_app/presentation/widgets/input_label.dart';
 
 class DatecumDateMenu extends StatelessWidget {
   final String date;

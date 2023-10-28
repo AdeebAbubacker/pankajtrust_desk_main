@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/core/colors/colors.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/label_cum_dropdownmenu.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/spacer_height.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_cum_dropdownmenu.dart';
+import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
 class BankMainLayout extends StatefulWidget {
   final Widget cardData;

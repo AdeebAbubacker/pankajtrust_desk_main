@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
 import 'package:pankajtrust_app/package/presentation/custom_stepper.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/family_screen.dart';
-import 'package:pankajtrust_app/presentation/student/screens/homescreen/homeScreenLayout.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/bankcard.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/cardMainLayout.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/vericalLine.dart';
+import 'package:pankajtrust_app/presentation/student/screens/homescreen/cardData1.dart';
+import 'package:pankajtrust_app/presentation/widgets/bankcard.dart';
+import 'package:pankajtrust_app/presentation/widgets/cardMainLayout.dart';
+import 'package:pankajtrust_app/presentation/widgets/vericalLine.dart';
 
 class MyCustomStepper extends StatefulWidget {
   const MyCustomStepper({super.key});

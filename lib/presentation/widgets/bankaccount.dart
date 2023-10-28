@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
 import 'package:pankajtrust_app/presentation/student/screens/homescreen/homeScreenLayout.dart';
-import 'package:pankajtrust_app/presentation/student/widgets/cardMainLayout.dart';
+import 'package:pankajtrust_app/presentation/widgets/cardMainLayout.dart';
 
 class BankAccount extends StatefulWidget {
   bool forBankAccountholder = false;
