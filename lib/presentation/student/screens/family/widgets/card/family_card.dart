@@ -7,7 +7,7 @@ import 'package:pankajtrust_app/presentation/widgets/labul_NumericalText.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/lineDivider.dart';
 import 'package:pankajtrust_app/presentation/widgets/input_label.dart';
 import 'package:pankajtrust_app/presentation/widgets/label_inputText.dart';
-import 'package:pankajtrust_app/presentation/widgets/labelcumTextFormField.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_name.dart';
 import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
 class FamilyCard extends StatefulWidget {
@@ -18,7 +18,8 @@ class FamilyCard extends StatefulWidget {
   FamilyCard({
     super.key,
     this.width,
-    required this.mybool, this.siblings = const Text(''),
+    required this.mybool,
+    this.siblings = const Text(''),
   });
 
   @override
@@ -26,7 +27,6 @@ class FamilyCard extends StatefulWidget {
 }
 
 class _FamilyCardState extends State<FamilyCard> {
-  
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -38,7 +38,7 @@ class _FamilyCardState extends State<FamilyCard> {
             child: Text('Father', style: kfamiltTitleTextColor),
           ),
 
-          LabelcumTextFormField(mytext: 'Name'),
+          LabelName(labelText: 'Name'),
           const HeightSpacer(height: 14),
           const CheckBoxWorkout(
             width: 46,

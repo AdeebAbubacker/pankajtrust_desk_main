@@ -18,7 +18,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
     return Column(
       children: [
         CardMainLayout(
-          CardMainLayoutheight: 1500,
+          CardMainLayoutheight: 1513,
           title: 'Family Details',
           cardData: FamilyCard(
             mybool: false,

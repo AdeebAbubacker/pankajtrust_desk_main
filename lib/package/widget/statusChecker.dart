@@ -34,7 +34,7 @@ class StatusChecker extends StatelessWidget {
             style: titleStyle,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 5, top: 5),
+            padding: const EdgeInsets.only(top: 5),
             child: Container(
               width: 59,
               height: 20,

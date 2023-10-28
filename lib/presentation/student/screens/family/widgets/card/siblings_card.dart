@@ -7,7 +7,7 @@ import 'package:pankajtrust_app/presentation/widgets/labul_NumericalText.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/lineDivider.dart';
 import 'package:pankajtrust_app/presentation/widgets/input_label.dart';
 import 'package:pankajtrust_app/presentation/widgets/label_inputText.dart';
-import 'package:pankajtrust_app/presentation/widgets/labelcumTextFormField.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_name.dart';
 import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
 class SiblingsCard extends StatefulWidget {
@@ -37,7 +37,7 @@ class _SiblingsCardState extends State<SiblingsCard> {
             padding: EdgeInsets.only(top: 5, bottom: 12),
             child: Text('Siblings Details', style: kfamiltTitleTextColor),
           ),
-          LabelcumTextFormField(mytext: 'Name'),
+          // LabelcumTextFormField(labelText: 'sss'),
         ],
       ),
     );

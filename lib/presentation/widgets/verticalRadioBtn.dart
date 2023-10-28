@@ -4,25 +4,27 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
 
-class horizontalRadioBtn extends StatefulWidget {
+class VerticalRadioBtn extends StatefulWidget {
   String? title;
   int groupValue;
-  final List<Content> steps;
+  final List<MyData> steps;
 
-  horizontalRadioBtn(
+  VerticalRadioBtn(
       {super.key,
       required this.title,
       this.groupValue = 0,
       required this.steps});
 
   @override
-  _horizontalRadioBtnState createState() => _horizontalRadioBtnState();
+  _VerticalRadioBtnState createState() => _VerticalRadioBtnState();
 }
 
-class _horizontalRadioBtnState extends State<horizontalRadioBtn> {
+class _VerticalRadioBtnState extends State<VerticalRadioBtn> {
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 4),
@@ -31,17 +33,17 @@ class _horizontalRadioBtnState extends State<horizontalRadioBtn> {
             style: kCardContentStyle,
           ),
         ),
-        const SizedBox(
-          width: 40,
-        ),
-        Row(
+        // const SizedBox(
+        //   width: 40,
+        // ),
+        Column(
           children: widget.steps.asMap().entries.map((entry) {
             final index = entry.key + 1;
             final content = entry.value;
             return Row(
               children: [
                 Radio(
-                  value: index,
+                  value: index, 
                   groupValue: widget.groupValue,
                   onChanged: (value) {
                     setState(() {
@@ -62,10 +64,10 @@ class _horizontalRadioBtnState extends State<horizontalRadioBtn> {
   }
 }
 
-class Content {
+class MyData {
   final String choiceLabel;
 
-  Content({
+  MyData({
     required this.choiceLabel,
   });
 }
