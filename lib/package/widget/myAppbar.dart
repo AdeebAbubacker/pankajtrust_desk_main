@@ -1,3 +1,4 @@
+import 'package:pankajtrust_app/core/colors/colors.dart';
 import 'package:pankajtrust_app/package/core/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class myAppBar extends StatelessWidget {
         isEmpty ? '' : title,
         style: whiteColor,
       ),
-      backgroundColor: const Color(0xFF702DE3),
+      backgroundColor: kvioletColor,
       actions: [
         Padding(
           padding: EdgeInsets.only(right: 17),

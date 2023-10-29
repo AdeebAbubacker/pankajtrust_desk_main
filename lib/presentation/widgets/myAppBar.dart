@@ -30,7 +30,7 @@ class myAppBar extends StatelessWidget {
         isEmpty ? '' : title,
         style: kwhiteTextColorTitle,
       ),
-      backgroundColor: const Color(0xFF702DE3),
+      backgroundColor: kvioletColor,
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 17),

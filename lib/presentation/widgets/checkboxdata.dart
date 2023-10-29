@@ -14,8 +14,9 @@ class CheckBoxWorkout extends StatefulWidget {
 }
 
 class _CheckBoxWorkoutState extends State<CheckBoxWorkout> {
-  bool alive = false;
+  bool alive = true;
   bool bedridden = false;
+  
   int selectedValue = 0;
 
   @override

@@ -1,9 +1,11 @@
+import 'package:pankajtrust_app/core/colors/colors.dart';
 import 'package:pankajtrust_app/package/core/constants.dart';
 import 'package:pankajtrust_app/package/widget/connector.dart';
 import 'package:pankajtrust_app/package/widget/myAppbar.dart';
 import 'package:pankajtrust_app/package/widget/statusChecker.dart';
 import 'package:pankajtrust_app/package/widget/toggle_button.dart';
 import 'package:flutter/material.dart';
+import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
 class CustomStepper extends StatefulWidget {
   final List<AddStep> steps;
@@ -209,17 +211,25 @@ class _CustomStepperState extends State<CustomStepper> {
                   );
                 }),
               ),
-              const SizedBox(height: 20),
+              HeightSpacer(height: 7),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(kbuttonColor),
+                    ),
                     onPressed: () {
                       cancelStep();
                     },
                     child: const Text('Cancel'),
                   ),
                   ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(kbuttonColor),
+                    ),
                     onPressed: () {
                       continueStep();
                     },
@@ -227,6 +237,7 @@ class _CustomStepperState extends State<CustomStepper> {
                   ),
                 ],
               ),
+              HeightSpacer(height: 16),
             ],
           ),
         ),

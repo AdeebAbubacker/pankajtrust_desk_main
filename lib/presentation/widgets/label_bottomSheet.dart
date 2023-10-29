@@ -4,15 +4,10 @@ import 'package:pankajtrust_app/core/colors/colors.dart';
 
 GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-class OccupationWithSheet extends StatefulWidget {
-  const OccupationWithSheet({Key? key}) : super(key: key);
-
-  @override
-  State<OccupationWithSheet> createState() => _OccupationWithSheetState();
-}
-
-class _OccupationWithSheetState extends State<OccupationWithSheet> {
-  List<String> _tempListOfCities = [
+class labelBottomSheet extends StatefulWidget {
+  final String title;
+  final hintText;
+  List<String> ListofData = [
     'Agriculture',
     'Fishing',
     'Plumbing',
@@ -45,6 +40,49 @@ class _OccupationWithSheetState extends State<OccupationWithSheet> {
     'Aerospace Engineering and Operations Technicians',
     'Aerospace Engineers',
   ];
+  // ignore: non_constant_identifier_names
+  labelBottomSheet(
+      {Key? key,
+      this.ListofData = const [
+        'Agriculture',
+        'Fishing',
+        'Plumbing',
+        'Painting',
+        'Soldier',
+        'Policeman',
+        'Driver',
+        'Clerk',
+        "Office Staff",
+        'Supervisor',
+        'Able Seamen',
+        'Accountants',
+        'Auditors',
+        'Actors',
+        'Actuaries',
+        'Acupuncturists',
+        'Acute Care Nurses',
+        'Education Specialists',
+        'Adjustment Clerks',
+        'Administrative Law Judges',
+        'Adjudicators',
+        'Hearing Officers',
+        'Administrative Services Managers',
+        'Adult Literacy',
+        'Remedial Education',
+        'GED Teachers and Instructors',
+        'Advanced Practice Psychiatric Nurses',
+        'Advertising and Promotions Managers',
+        'Advertising Sales Agents',
+        'Aerospace Engineering and Operations Technicians',
+        'Aerospace Engineers',
+      ], required this.title, this.hintText})
+      : super(key: key);
+
+  @override
+  State<labelBottomSheet> createState() => _labelBottomSheetState();
+}
+
+class _labelBottomSheetState extends State<labelBottomSheet> {
   final List<String> _listOfCities = [];
   final TextEditingController textController = TextEditingController();
 
@@ -72,11 +110,11 @@ class _OccupationWithSheetState extends State<OccupationWithSheet> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Padding(
-                            padding: EdgeInsets.only(top: 20, bottom: 1),
+                           Padding(
+                            padding: const EdgeInsets.only(top: 20, bottom: 1),
                             child: Text(
-                              'Occupation Details',
-                              style: TextStyle(
+                              widget.title,
+                              style: const TextStyle(
                                 fontSize: 15,
                                 color: Color.fromARGB(255, 92, 91, 90),
                               ),
@@ -109,7 +147,8 @@ class _OccupationWithSheetState extends State<OccupationWithSheet> {
                                   color: kblackColor, fontSize: 14),
                               controller: textController,
                               decoration: InputDecoration(
-                                hintText: 'Search Occupation / Job',
+                                // hintText: 'Search Occupation / Job',
+                                 hintText: widget.hintText,
                                 contentPadding: const EdgeInsets.all(8),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15.0),
@@ -128,7 +167,7 @@ class _OccupationWithSheetState extends State<OccupationWithSheet> {
                                       setState(
                                         () {
                                           textController.clear();
-                                          // _tempListOfCities.clear();
+                                          // ListofData.clear();
                                         },
                                       );
                                     },
@@ -138,7 +177,7 @@ class _OccupationWithSheetState extends State<OccupationWithSheet> {
                               onChanged: (value) {
                                 setState(
                                   () {
-                                    // _tempListOfCities = _buildSearchList(value);
+                                    // ListofData = _buildSearchList(value);
                                   },
                                 );
                               },
@@ -150,24 +189,24 @@ class _OccupationWithSheetState extends State<OccupationWithSheet> {
                     Expanded(
                       child: ListView.separated(
                         controller: scrollController,
-                        itemCount: (_tempListOfCities != null &&
-                                _tempListOfCities.isNotEmpty)
-                            ? _tempListOfCities.length
+                        itemCount: (widget.ListofData != null &&
+                                widget.ListofData.isNotEmpty)
+                            ? widget.ListofData.length
                             : _listOfCities.length,
                         separatorBuilder: (context, index) {
                           return const Divider();
                         },
                         itemBuilder: (context, index) {
                           return InkWell(
-                            child: (_tempListOfCities != null &&
-                                    _tempListOfCities.isNotEmpty)
+                            child: (widget.ListofData != null &&
+                                    widget.ListofData.isNotEmpty)
                                 ? _showBottomSheetWithSearch(
-                                    index, _tempListOfCities)
+                                    index, widget.ListofData)
                                 : _showBottomSheetWithSearch(
                                     index, _listOfCities),
                             onTap: () {
                               // Set the selected text in the text field
-                              textController.text = _tempListOfCities[index];
+                              textController.text = widget.ListofData[index];
                               // Close the bottom sheet
                               Navigator.of(context).pop();
                             },
@@ -191,9 +230,8 @@ class _OccupationWithSheetState extends State<OccupationWithSheet> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding:
-              EdgeInsets.only(top: 14, left: 14, bottom: isLastItem ? 14 : 0),
+        Container(
+          margin: const EdgeInsets.only(top: 12, bottom: 10, left: 14),
           child: Text(
             listOfCities[index],
             style: const TextStyle(

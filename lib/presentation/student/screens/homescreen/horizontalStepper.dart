@@ -20,8 +20,7 @@ class _MyCustomStepperState extends State<MyCustomStepper> {
   // var mybool = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
+    return Scaffold(     
       body: CustomStepper(
         steps: [
           AddStep(
@@ -83,7 +82,6 @@ class _MyCustomStepperState extends State<MyCustomStepper> {
                       ],
                     ),
                   ),
-
                   forBankAccountholder
                       ? BankMainLayout(
                           cardData: BankCard(mybool: forBankAccountholder))

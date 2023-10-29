@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/presentation/widgets/input_label.dart';
 
@@ -62,8 +60,7 @@ class _LabelNameState extends State<LabelName> {
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               contentPadding: const EdgeInsets.only(top: 6, left: 14),
-              hintText: 'Enter your email',
-              errorText: _isValid ? null : 'Invalid email format',
+              errorText: _isValid ? null : 'name is mandatory',
               border: InputBorder.none,
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pankajtrust_app/core/colors/colors.dart';
 
 class VerticalLine extends StatelessWidget {
   const VerticalLine({super.key});
@@ -10,7 +11,7 @@ class VerticalLine extends StatelessWidget {
       child: Container(
         width: 1,
         height: 25,
-        color: const Color.fromARGB(255, 183, 177, 177),
+        color:  kVerticalLineColor,
       ),
     );
   }

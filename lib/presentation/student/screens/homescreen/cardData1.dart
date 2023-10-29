@@ -29,7 +29,7 @@ class _CardData1State extends State<CardData1> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        LabelInputText(mytext: 'Name'),
+        LabelInputText(label: 'Name'),
         const HeightSpacer(height: 14),
         horizontalRadioBtn(
           steps: [
@@ -42,7 +42,7 @@ class _CardData1State extends State<CardData1> {
         const DOBPicker(),
         const HeightSpacer(height: 14),
         LabelInputText(
-          mytext: 'Address',
+          label: 'Address',
           maxlines: 3,
         ),
         const HeightSpacer(height: 14),
@@ -50,7 +50,8 @@ class _CardData1State extends State<CardData1> {
         const HeightSpacer(height: 14),
         // LabelInputText(mytext: 'email'),
         LabelEmail(labelText: 'email'),
-      ]),
+      ],
+      ),
     );
   }
 }
