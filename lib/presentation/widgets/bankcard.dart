@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/core/colors/colors.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
+import 'package:pankajtrust_app/presentation/student/screens/homescreen/cardData1.dart';
+import 'package:pankajtrust_app/presentation/widgets/cardMainLayout.dart';
 import 'package:pankajtrust_app/presentation/widgets/input_label.dart';
 import 'package:pankajtrust_app/presentation/widgets/label_bottomSheet.dart';
+import 'package:pankajtrust_app/presentation/widgets/custom_bottomSheet.dart';
 import 'package:pankajtrust_app/presentation/widgets/label_inputText.dart';
 import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
@@ -100,7 +103,6 @@ class _BankCardState extends State<BankCard> {
           InputLabel(mytext: 'Enter Bank'),
           labelBottomSheet(
             title: 'Bank Details',
-           
             hintText: 'Search For Bank',
             listofData: const [
               ' ALLAHABAD BANK',

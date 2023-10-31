@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pankajtrust_app/core/colors/colors.dart';
 
 GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-class labelBottomSheet extends StatefulWidget {
+class customBottomSheet extends StatefulWidget {
   final String title;
   final hintText;
+  final Widget widget;
   List<String> listofData = [];
-  labelBottomSheet(
+  customBottomSheet(
       {Key? key,
       this.listofData = const [
         'Agriculture',
@@ -44,14 +44,14 @@ class labelBottomSheet extends StatefulWidget {
         'Aerospace Engineers',
       ],
       required this.title,
-      this.hintText})
+      this.hintText, required this.widget})
       : super(key: key);
 
   @override
-  State<labelBottomSheet> createState() => _labelBottomSheetState();
+  State<customBottomSheet> createState() => _labelBottomSheetState();
 }
 
-class _labelBottomSheetState extends State<labelBottomSheet> {
+class _labelBottomSheetState extends State<customBottomSheet> {
   final List<String> emptyList = [];
   final TextEditingController textController = TextEditingController();
 
@@ -102,76 +102,45 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
                         ],
                       ),
                     ),
+                    
                     Container(
                       width: 500,
                       height: 1,
                       color: const Color.fromARGB(255, 211, 211, 208),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 14, top: 8, right: 14, bottom: 8),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: TextField(
-                              style: const TextStyle(
-                                  color: kblackColor, fontSize: 14),
-                              controller: textController,
-                              decoration: InputDecoration(
-                                hintText: widget.hintText,
-                                contentPadding: const EdgeInsets.all(8),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15.0),
-                                  borderSide: const BorderSide(),
-                                ),
-                                prefixIcon: const Icon(Icons.search),
-                                suffixIcon: Padding(
-                                  padding: const EdgeInsets.only(right: 20),
-                                  child: IconButton(
-                                    icon: const Icon(FontAwesomeIcons.eraser,
-                                        size: 24,
-                                        color:
-                                            Color.fromARGB(255, 140, 138, 138)),
-                                    color: const Color(0xFF1F91E7),
-                                    onPressed: () {
-                                      setState(
-                                        () {
-                                          textController.clear();
-                                        },
-                                      );
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: ListView.separated(
-                        controller: scrollController,
-                        itemCount: (widget.listofData != null &&
-                                widget.listofData.isNotEmpty)
-                            ? widget.listofData.length
-                            : emptyList.length,
-                        separatorBuilder: (context, index) {
-                          return const Divider();
-                        },
-                        itemBuilder: (context, index) {
-                          return InkWell(
-                            child: (widget.listofData != null &&
-                                    widget.listofData.isNotEmpty)
-                                ? showBottomSheetData(index, widget.listofData)
-                                : showBottomSheetData(index, emptyList),
-                            onTap: () {
-                              textController.text = widget.listofData[index];
-                              Navigator.of(context).pop();
-                            },
-                          );
-                        },
-                      ),
-                    )
+                    Expanded(child: ListView.builder(
+                      shrinkWrap: true,
+                      controller: scrollController,
+                      itemCount: 1,
+                      itemBuilder: (context, index) {
+                        return
+                      widget.widget;
+                    },),)
+         
+                    // Expanded(
+                    //   child: ListView.separated(
+                    //     controller: scrollController,
+                    //     itemCount: (widget.listofData != null &&
+                    //             widget.listofData.isNotEmpty)
+                    //         ? widget.listofData.length
+                    //         : emptyList.length,
+                    //     separatorBuilder: (context, index) {
+                    //       return const Divider();
+                    //     },
+                    //     itemBuilder: (context, index) {
+                    //       return InkWell(
+                    //         child: (widget.listofData != null &&
+                    //                 widget.listofData.isNotEmpty)
+                    //             ? showBottomSheetData(index, widget.listofData)
+                    //             : showBottomSheetData(index, emptyList),
+                    //         onTap: () {
+                    //           textController.text = widget.listofData[index];
+                    //           Navigator.of(context).pop();
+                    //         },
+                    //       );
+                    //     },
+                    //   ),
+                    // )
                   ],
                 );
               },
