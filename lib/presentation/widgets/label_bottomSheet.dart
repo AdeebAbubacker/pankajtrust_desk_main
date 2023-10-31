@@ -7,43 +7,10 @@ GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 class labelBottomSheet extends StatefulWidget {
   final String title;
   final hintText;
-  List<String> ListofData = [
-    'Agriculture',
-    'Fishing',
-    'Plumbing',
-    'Painting',
-    'Soldier',
-    'Policeman',
-    'Driver',
-    'Clerk',
-    "Office Staff",
-    'Supervisor',
-    'Able Seamen',
-    'Accountants',
-    'Auditors',
-    'Actors',
-    'Actuaries',
-    'Acupuncturists',
-    'Acute Care Nurses',
-    'Education Specialists',
-    'Adjustment Clerks',
-    'Administrative Law Judges',
-    'Adjudicators',
-    'Hearing Officers',
-    'Administrative Services Managers',
-    'Adult Literacy',
-    'Remedial Education',
-    'GED Teachers and Instructors',
-    'Advanced Practice Psychiatric Nurses',
-    'Advertising and Promotions Managers',
-    'Advertising Sales Agents',
-    'Aerospace Engineering and Operations Technicians',
-    'Aerospace Engineers',
-  ];
-  // ignore: non_constant_identifier_names
+  List<String> listofData = [];
   labelBottomSheet(
       {Key? key,
-      this.ListofData = const [
+      this.listofData = const [
         'Agriculture',
         'Fishing',
         'Plumbing',
@@ -83,7 +50,7 @@ class labelBottomSheet extends StatefulWidget {
 }
 
 class _labelBottomSheetState extends State<labelBottomSheet> {
-  final List<String> _listOfCities = [];
+  final List<String> emptyList = [];
   final TextEditingController textController = TextEditingController();
 
   void _showModal(context) {
@@ -147,7 +114,6 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
                                   color: kblackColor, fontSize: 14),
                               controller: textController,
                               decoration: InputDecoration(
-                                // hintText: 'Search Occupation / Job',
                                  hintText: widget.hintText,
                                 contentPadding: const EdgeInsets.all(8),
                                 border: OutlineInputBorder(
@@ -167,20 +133,13 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
                                       setState(
                                         () {
                                           textController.clear();
-                                          // ListofData.clear();
                                         },
                                       );
                                     },
                                   ),
                                 ),
                               ),
-                              onChanged: (value) {
-                                setState(
-                                  () {
-                                    // ListofData = _buildSearchList(value);
-                                  },
-                                );
-                              },
+
                             ),
                           ),
                         ],
@@ -189,25 +148,23 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
                     Expanded(
                       child: ListView.separated(
                         controller: scrollController,
-                        itemCount: (widget.ListofData != null &&
-                                widget.ListofData.isNotEmpty)
-                            ? widget.ListofData.length
-                            : _listOfCities.length,
+                        itemCount: (widget.listofData != null &&
+                                widget.listofData.isNotEmpty)
+                            ? widget.listofData.length
+                            : emptyList.length,
                         separatorBuilder: (context, index) {
                           return const Divider();
                         },
                         itemBuilder: (context, index) {
                           return InkWell(
-                            child: (widget.ListofData != null &&
-                                    widget.ListofData.isNotEmpty)
-                                ? _showBottomSheetWithSearch(
-                                    index, widget.ListofData)
-                                : _showBottomSheetWithSearch(
-                                    index, _listOfCities),
+                            child: (widget.listofData != null &&
+                                    widget.listofData.isNotEmpty)
+                                ? showBottomSheetData(
+                                    index, widget.listofData)
+                                : showBottomSheetData(
+                                    index, emptyList),
                             onTap: () {
-                              // Set the selected text in the text field
-                              textController.text = widget.ListofData[index];
-                              // Close the bottom sheet
+                              textController.text = widget.listofData[index];
                               Navigator.of(context).pop();
                             },
                           );
@@ -224,8 +181,8 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
     );
   }
 
-  Widget _showBottomSheetWithSearch(int index, List listOfCities) {
-    final isLastItem = index == listOfCities.length - 1;
+  Widget showBottomSheetData(int index, List data) {
+    final isLastItem = index == data.length - 1;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -233,7 +190,7 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
         Container(
           margin: const EdgeInsets.only(top: 12, bottom: 10, left: 14),
           child: Text(
-            listOfCities[index],
+            data[index],
             style: const TextStyle(
               color: Color.fromARGB(255, 84, 84, 84),
               fontSize: 14,
@@ -257,10 +214,10 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
   List<String> _buildSearchList(String userSearchTerm) {
     List<String> searchList = [];
 
-    for (int i = 0; i < _listOfCities.length; i++) {
-      String name = _listOfCities[i];
+    for (int i = 0; i < emptyList.length; i++) {
+      String name = emptyList[i];
       if (name.toLowerCase().contains(userSearchTerm.toLowerCase())) {
-        searchList.add(_listOfCities[i]);
+        searchList.add(emptyList[i]);
       }
     }
     return searchList;
@@ -274,37 +231,30 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
         children: [
           Stack(
             children: [
-              InkWell(
-                onTap: () {
-                  _showModal(context);
-                },
-                child: Container(
-                  width: 380,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(
-                        color: const Color.fromARGB(255, 136, 133, 133),
-                        width: 1.0,
-                      ),
-                      color: const Color.fromARGB(255, 255, 255, 255)),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 14),
-                    child: TextFormField(
-                      style: const TextStyle(
-                        color: Color.fromARGB(
-                            255, 92, 92, 92), // Change text color to blue
-                        fontSize: 14, // Change font size
-                        // You can add more style properties as needed
-                      ),
-                      readOnly: true,
-                      maxLines: 1,
-                      controller: textController,
-                      decoration: const InputDecoration(
-                        border: InputBorder.none,
-                        suffixIcon:
-                            Icon(Icons.arrow_drop_down, color: Colors.black),
-                        // Apply custom style to the text
-                      ),
+              Container(
+                width: 380,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: const Color.fromARGB(255, 136, 133, 133),
+                      width: 1.0,
+                    ),
+                    color: const Color.fromARGB(255, 255, 255, 255)),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 14),
+                  child: TextFormField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(
+                          255, 92, 92, 92), 
+                      fontSize: 14, 
+                    ),
+                    readOnly: true,
+                    maxLines: 1,
+                    controller: textController,
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      suffixIcon:
+                          Icon(Icons.arrow_drop_down, color: Colors.black),
                     ),
                   ),
                 ),

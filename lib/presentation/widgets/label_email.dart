@@ -60,7 +60,7 @@ class _LabelEmailState extends State<LabelEmail> {
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               contentPadding: const EdgeInsets.only(top: 6, left: 14),
-              hintText: 'Enter your email',
+              // hintText: 'Enter your email',
               errorText: _isValid ? null : 'Invalid email format',
               border: InputBorder.none,
             ),
