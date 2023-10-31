@@ -42,7 +42,9 @@ class labelBottomSheet extends StatefulWidget {
         'Advertising Sales Agents',
         'Aerospace Engineering and Operations Technicians',
         'Aerospace Engineers',
-      ], required this.title, this.hintText})
+      ],
+      required this.title,
+      this.hintText})
       : super(key: key);
 
   @override
@@ -77,8 +79,9 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                           Padding(
-                            padding: const EdgeInsets.only(top: 20, bottom: 1),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                top: 20, bottom: 1, left: 6),
                             child: Text(
                               widget.title,
                               style: const TextStyle(
@@ -105,7 +108,8 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
                       color: const Color.fromARGB(255, 211, 211, 208),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.only(
+                          left: 14, top: 8, right: 14, bottom: 13),
                       child: Row(
                         children: [
                           Expanded(
@@ -114,7 +118,7 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
                                   color: kblackColor, fontSize: 14),
                               controller: textController,
                               decoration: InputDecoration(
-                                 hintText: widget.hintText,
+                                hintText: widget.hintText,
                                 contentPadding: const EdgeInsets.all(8),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15.0),
@@ -139,7 +143,6 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
                                   ),
                                 ),
                               ),
-
                             ),
                           ),
                         ],
@@ -159,10 +162,8 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
                           return InkWell(
                             child: (widget.listofData != null &&
                                     widget.listofData.isNotEmpty)
-                                ? showBottomSheetData(
-                                    index, widget.listofData)
-                                : showBottomSheetData(
-                                    index, emptyList),
+                                ? showBottomSheetData(index, widget.listofData)
+                                : showBottomSheetData(index, emptyList),
                             onTap: () {
                               textController.text = widget.listofData[index];
                               Navigator.of(context).pop();
@@ -182,11 +183,20 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
   }
 
   Widget showBottomSheetData(int index, List data) {
+    final isFirstItem = index == 0;
     final isLastItem = index == data.length - 1;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        if (isFirstItem)
+          const Padding(
+            padding: EdgeInsets.only(top: 4),
+            child: Divider(
+              height: 1,
+              thickness: 1,
+            ),
+          ),
         Container(
           margin: const EdgeInsets.only(top: 12, bottom: 10, left: 14),
           child: Text(
@@ -200,9 +210,8 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
         ),
         if (isLastItem)
           const Padding(
-            padding: EdgeInsets.only(bottom: 29),
+            padding: EdgeInsets.only(bottom: 6),
             child: Divider(
-              color: Color.fromARGB(255, 211, 211, 208),
               height: 1,
               thickness: 1,
             ),
@@ -244,9 +253,8 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
                   padding: const EdgeInsets.only(left: 14),
                   child: TextFormField(
                     style: const TextStyle(
-                      color: Color.fromARGB(
-                          255, 92, 92, 92), 
-                      fontSize: 14, 
+                      color: Color.fromARGB(255, 92, 92, 92),
+                      fontSize: 14,
                     ),
                     readOnly: true,
                     maxLines: 1,
