@@ -211,33 +211,49 @@ class _CustomStepperState extends State<CustomStepper> {
                   );
                 }),
               ),
-              HeightSpacer(height: 7),
+              const HeightSpacer(height: 18),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(kbuttonColor),
-                    ),
-                    onPressed: () {
+                  InkWell(
+                    onTap: () {
                       cancelStep();
                     },
-                    child: const Text('Cancel'),
-                  ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(kbuttonColor),
+                    child: Container(
+                      width: 120,
+                      height: 50,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 112, 42, 205),
+                          borderRadius: BorderRadius.all(Radius.circular(5))),
+                      child: const Center(
+                        child: Text(
+                          'cancel',
+                          style: myButtontxtColor,
+                        ),
+                      ),
                     ),
-                    onPressed: () {
+                  ),
+                  InkWell(
+                    onTap: () {
                       continueStep();
                     },
-                    child: const Text('Continue'),
+                    child: Container(
+                      width: 120,
+                      height: 50,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 112, 42, 205),
+                          borderRadius: BorderRadius.all(Radius.circular(5))),
+                      child: const Center(
+                          child: Text(
+                        'continue',
+                        style: myButtontxtColor,
+                      ),
+                      ),
+                    ),
                   ),
                 ],
               ),
-              HeightSpacer(height: 16),
+              const HeightSpacer(height: 16),
             ],
           ),
         ),

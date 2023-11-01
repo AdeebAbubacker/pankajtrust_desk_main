@@ -3,6 +3,7 @@ import 'package:pankajtrust_app/presentation/widgets/checkboxdata.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
 import 'package:pankajtrust_app/presentation/widgets/label_bottomSheet.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/checkbox_data.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_inputText.dart';
 import 'package:pankajtrust_app/presentation/widgets/labul_NumericalText.dart';
 import 'package:pankajtrust_app/presentation/student/screens/family/widgets/local_widgets/lineDivider.dart';
 import 'package:pankajtrust_app/presentation/widgets/input_label.dart';
@@ -68,30 +69,32 @@ class _FamilyCardState extends State<FamilyCard> {
               hintText: 'Search For Occupation / Job'),
           const HeightSpacer(height: 14),
           LabelNumericalText(mytext: 'Monthly Income'),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Container(
-                      width: 90,
-                      height: 36,
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(2)),
-                          color: Color.fromARGB(221, 227, 223, 223)),
-                      child: const Center(child: Text('or'))),
-                ),
-              ],
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.all(8.0),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: [
+          //       Padding(
+          //         padding: const EdgeInsets.only(top: 10),
+          //         child: Container(
+          //             width: 90,
+          //             height: 36,
+          //             decoration: const BoxDecoration(
+          //                 borderRadius: BorderRadius.all(Radius.circular(2)),
+          //                 color: Color.fromARGB(221, 227, 223, 223)),
+          //             child: const Center(child: Text('or'))),
+          //       ),
+          //     ],
+          //   ),
+          // ),
           const LineDivider(),
           const Padding(
             padding: EdgeInsets.only(top: 5, bottom: 12),
             child: Text('Guardian', style: kfamiltTitleTextColor),
           ),
           const LabelName(labelText: 'Name'),
+          const HeightSpacer(height: 14),
+          LabelInputText(label: 'Relationship with Applicant'),
           const HeightSpacer(height: 14),
           const CheckBoxData(label: 'Alive', width: 130),
           const HeightSpacer(height: 14),
@@ -102,7 +105,6 @@ class _FamilyCardState extends State<FamilyCard> {
               title: 'Occupation Details',
               hintText: 'Search For Occupation / Job'),
           const HeightSpacer(height: 14),
-          // LabelInputText(mytext: 'Monthly Income'),
           LabelNumericalText(mytext: 'Monthly Income'),
           widget.siblings
         ],

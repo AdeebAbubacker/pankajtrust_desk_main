@@ -20,7 +20,7 @@ class _MyCustomStepperState extends State<MyCustomStepper> {
   // var mybool = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(     
+    return Scaffold(
       body: CustomStepper(
         steps: [
           AddStep(
@@ -33,7 +33,7 @@ class _MyCustomStepperState extends State<MyCustomStepper> {
 
                   CardMainLayout(
                     title: 'Personal Info',
-                    CardMainLayoutheight: 630,
+                    CardMainLayoutheight: 623,
                     cardData: CardData1(
                       mybool: false,
                     ),
@@ -96,7 +96,7 @@ class _MyCustomStepperState extends State<MyCustomStepper> {
             content: Container(
               width: 100,
               height: 20,
-              color: const Color.fromARGB(255, 168, 34, 34),
+              color: Color.fromARGB(255, 10, 137, 183),
             ),
           ),
           AddStep(

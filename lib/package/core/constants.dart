@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 const blackColor = TextStyle(color: Colors.black);
 const whiteColor = TextStyle(color: Colors.white);
 const myButtonBgColor = Color.fromARGB(255, 239, 0, 0);
+const myButtontxtColor = TextStyle(color: Colors.white);
 
 // ------------------ Card Content Style -------------------------------------------
 

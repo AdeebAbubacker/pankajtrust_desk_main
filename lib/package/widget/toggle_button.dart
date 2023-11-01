@@ -25,3 +25,15 @@ class ToggleBtn extends StatelessWidget {
     );
   }
 }
+
+
+// Container(
+//       width: 35,
+//       height: 35,
+//       decoration: BoxDecoration(
+//           color: isActive
+//               ? const Color(0xFF702DE3)
+//               : Color.fromARGB(255, 184, 180, 180),
+//           borderRadius: const BorderRadius.all(Radius.circular(90))),
+//       child: Center(child: currentStep),
+//     );
