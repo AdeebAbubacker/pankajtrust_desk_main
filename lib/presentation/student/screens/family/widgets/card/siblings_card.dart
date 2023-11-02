@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/core/constant/constants.dart';
-
+import 'package:pankajtrust_app/presentation/widgets/horizontalRadioBtn.dart';
+import 'package:pankajtrust_app/presentation/widgets/label_inputText.dart';
 
 class SiblingsCard extends StatefulWidget {
   final Widget siblings;
@@ -27,9 +28,16 @@ class _SiblingsCardState extends State<SiblingsCard> {
         children: [
           const Padding(
             padding: EdgeInsets.only(top: 5, bottom: 12),
-            child: Text('Siblings Details', style: kfamiltTitleTextColor),
+            child: Text('Brother / Sister', style: kfamiltTitleTextColor),
           ),
-          // LabelcumTextFormField(labelText: 'sss'),
+          LabelInputText(label: 'Name'),
+          horizontalRadioBtn(
+            steps: [
+              Content(choiceLabel: 'Male'),
+              Content(choiceLabel: 'Female'),
+            ],
+            title: 'Gender',
+          ),
         ],
       ),
     );

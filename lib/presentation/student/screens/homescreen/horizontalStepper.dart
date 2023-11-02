@@ -96,15 +96,17 @@ class _MyCustomStepperState extends State<MyCustomStepper> {
             content: Container(
               width: 100,
               height: 20,
-              color: Color.fromARGB(255, 10, 137, 183),
+              color: const Color.fromARGB(255, 10, 137, 183),
             ),
           ),
           AddStep(
-              title: 'ddd',
-              content: Container(
-                  width: 100,
-                  height: 20,
-                  color: const Color.fromARGB(255, 50, 39, 4))),
+            title: 'ddd',
+            content: Container(
+              width: 100,
+              height: 20,
+              color: const Color.fromARGB(255, 50, 39, 4),
+            ),
+          ),
         ],
       ),
     );

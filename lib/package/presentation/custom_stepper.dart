@@ -1,4 +1,3 @@
-import 'package:pankajtrust_app/core/colors/colors.dart';
 import 'package:pankajtrust_app/package/core/constants.dart';
 import 'package:pankajtrust_app/package/widget/connector.dart';
 import 'package:pankajtrust_app/package/widget/myAppbar.dart';
@@ -191,7 +190,8 @@ class _CustomStepperState extends State<CustomStepper> {
                             statusColor: statusTodoText,
                             Step: 'Step 4',
                             title: 'Home'),
-                      ]),
+                      ],
+                      ),
                     ),
                   ],
                 ),
@@ -209,7 +209,8 @@ class _CustomStepperState extends State<CustomStepper> {
                       ),
                     ),
                   );
-                }),
+                },
+                ),
               ),
               const HeightSpacer(height: 18),
               Row(
@@ -244,10 +245,10 @@ class _CustomStepperState extends State<CustomStepper> {
                           color: Color.fromARGB(255, 112, 42, 205),
                           borderRadius: BorderRadius.all(Radius.circular(5))),
                       child: const Center(
-                          child: Text(
-                        'continue',
-                        style: myButtontxtColor,
-                      ),
+                        child: Text(
+                          'continue',
+                          style: myButtontxtColor,
+                        ),
                       ),
                     ),
                   ),
@@ -264,7 +265,7 @@ class _CustomStepperState extends State<CustomStepper> {
 
 class AddStep {
   final String title;
-  final content;
+  final Widget content;
 
   AddStep({
     required this.title,

@@ -44,7 +44,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
             ? Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: CardMainLayout(
-                  CardMainLayoutheight: 210,
+                  CardMainLayoutheight: 310,
                   title: 'Siblings Details',
                   cardData: SiblingsCard(
                     mybool: false,

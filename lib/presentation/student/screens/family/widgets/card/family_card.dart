@@ -56,7 +56,6 @@ class _FamilyCardState extends State<FamilyCard> {
             padding: EdgeInsets.only(top: 5, bottom: 12),
             child: Text('Mother', style: kfamiltTitleTextColor),
           ),
-
           const LabelName(labelText: 'Name'),
           const HeightSpacer(height: 14),
           const CheckBoxData(label: 'Alive', width: 130),
@@ -94,7 +93,7 @@ class _FamilyCardState extends State<FamilyCard> {
           ),
           const LabelName(labelText: 'Name'),
           const HeightSpacer(height: 14),
-          LabelInputText(label: 'Relationship with Applicant'),
+          LabelInputText(label: 'Relation'),
           const HeightSpacer(height: 14),
           const CheckBoxData(label: 'Alive', width: 130),
           const HeightSpacer(height: 14),
