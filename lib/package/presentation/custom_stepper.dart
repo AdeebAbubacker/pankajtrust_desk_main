@@ -6,9 +6,13 @@ import 'package:pankajtrust_app/package/widget/toggle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
-class CustomStepper extends StatefulWidget {
-  final List<AddStep> steps;
 
+
+class CustomStepper extends StatefulWidget {
+
+  
+  final List<AddStep> steps;
+   final VoidCallback? handleNextStep;
   /// Default page that is to be shown when the page loads.
   int currentPage;
   final EdgeInsets margin;
@@ -19,6 +23,7 @@ class CustomStepper extends StatefulWidget {
 
   CustomStepper(
       {Key? key,
+      this.handleNextStep,
       required this.steps,
       this.currentPage = 0,
       this.padding = const EdgeInsets.only(left: 0, right: 0),
@@ -46,12 +51,18 @@ class CustomStepper extends StatefulWidget {
         },
       }})
       : super(key: key);
+      
 
   @override
+  
   State<CustomStepper> createState() => _CustomStepperState();
+  
+  
 }
 
+
 class _CustomStepperState extends State<CustomStepper> {
+  
   @override
   Widget build(BuildContext context) {
     List<bool> toggleStates = [];
@@ -166,31 +177,32 @@ class _CustomStepperState extends State<CustomStepper> {
                     ),
                     const Padding(
                       padding: EdgeInsets.only(left: 15, right: 15),
-                      child: Row(children: [
-                        StatusChecker(
-                            status: 'completed',
-                            statusColor: statusCompletedText,
-                            Step: 'Step 1',
-                            title: 'Info'),
-                        Spacer(),
-                        StatusChecker(
-                            status: 'completed',
-                            statusColor: statusCompletedText,
-                            Step: 'Step 2',
-                            title: 'Family'),
-                        Spacer(),
-                        StatusChecker(
-                            status: 'In progress',
-                            statusColor: statusInprogressText,
-                            Step: 'Step 3',
-                            title: 'Academics'),
-                        Spacer(),
-                        StatusChecker(
-                            status: 'To do',
-                            statusColor: statusTodoText,
-                            Step: 'Step 4',
-                            title: 'Home'),
-                      ],
+                      child: Row(
+                        children: [
+                          StatusChecker(
+                              status: 'completed',
+                              statusColor: statusCompletedText,
+                              Step: 'Step 1',
+                              title: 'Info'),
+                          Spacer(),
+                          StatusChecker(
+                              status: 'completed',
+                              statusColor: statusCompletedText,
+                              Step: 'Step 2',
+                              title: 'Family'),
+                          Spacer(),
+                          StatusChecker(
+                              status: 'In progress',
+                              statusColor: statusInprogressText,
+                              Step: 'Step 3',
+                              title: 'Academics'),
+                          Spacer(),
+                          StatusChecker(
+                              status: 'To do',
+                              statusColor: statusTodoText,
+                              Step: 'Step 4',
+                              title: 'Home'),
+                        ],
                       ),
                     ),
                   ],
@@ -198,18 +210,20 @@ class _CustomStepperState extends State<CustomStepper> {
               ),
               const SizedBox(height: 40),
               Column(
-                children: List.generate(pageLength, (index) {
-                  return Visibility(
-                    visible: widget.currentPage == index,
-                    child: Padding(
-                      padding: widget.padding,
-                      child: Container(
-                        margin: widget.margin,
-                        child: widget.steps[index].content,
+                children: List.generate(
+                  pageLength,
+                  (index) {
+                    return Visibility(
+                      visible: widget.currentPage == index,
+                      child: Padding(
+                        padding: widget.padding,
+                        child: Container(
+                          margin: widget.margin,
+                          child: widget.steps[index].content,
+                        ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
                 ),
               ),
               const HeightSpacer(height: 18),

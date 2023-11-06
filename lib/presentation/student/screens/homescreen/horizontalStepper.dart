@@ -17,6 +17,12 @@ class MyCustomStepper extends StatefulWidget {
 class _MyCustomStepperState extends State<MyCustomStepper> {
   bool forBankAccountholder = false;
   bool forNoAccountUsers = true;
+  void handleNextStep() {
+    setState(() {
+      // CustomStepper.of(context).continueStep();
+    });
+  }
+
   // var mybool = false;
   @override
   Widget build(BuildContext context) {
@@ -82,10 +88,11 @@ class _MyCustomStepperState extends State<MyCustomStepper> {
                       ],
                     ),
                   ),
+
                   forBankAccountholder
                       ? BankMainLayout(
                           cardData: BankCard(mybool: forBankAccountholder))
-                      : const Text('')
+                      : const Text(''),
                 ],
               ),
             ),
@@ -101,10 +108,27 @@ class _MyCustomStepperState extends State<MyCustomStepper> {
           ),
           AddStep(
             title: 'ddd',
-            content: Container(
-              width: 100,
-              height: 20,
-              color: const Color.fromARGB(255, 50, 39, 4),
+            content: Column(
+              children: [
+                Container(
+                  width: 100,
+                  height: 20,
+                  color: const Color.fromARGB(255, 50, 39, 4),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Previous'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text('Next'),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         ],
