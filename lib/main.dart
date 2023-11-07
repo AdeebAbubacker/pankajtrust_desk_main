@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/presentation/student/screens/homescreen/horizontalStepper.dart';
 
-
 void main() {
   runApp(const MyApp());
 }

@@ -6,24 +6,22 @@ import 'package:pankajtrust_app/package/widget/toggle_button.dart';
 import 'package:flutter/material.dart';
 import 'package:pankajtrust_app/presentation/widgets/spacer_height.dart';
 
-
+// _CustomStepperState? _customStepperInstance;
 
 class CustomStepper extends StatefulWidget {
-
-  
   final List<AddStep> steps;
-   final VoidCallback? handleNextStep;
+
   /// Default page that is to be shown when the page loads.
   int currentPage;
   final EdgeInsets margin;
   final EdgeInsets padding;
+
 
   final Map<String, Map<String, double>> uiConfig;
   // final List uiConfig;
 
   CustomStepper(
       {Key? key,
-      this.handleNextStep,
       required this.steps,
       this.currentPage = 0,
       this.padding = const EdgeInsets.only(left: 0, right: 0),
@@ -51,18 +49,15 @@ class CustomStepper extends StatefulWidget {
         },
       }})
       : super(key: key);
-      
+
 
   @override
-  
   State<CustomStepper> createState() => _CustomStepperState();
-  
-  
 }
 
-
 class _CustomStepperState extends State<CustomStepper> {
-  
+
+
   @override
   Widget build(BuildContext context) {
     List<bool> toggleStates = [];
@@ -82,6 +77,7 @@ class _CustomStepperState extends State<CustomStepper> {
       });
     }
 
+    // ignore: unused_element
     void continueStep() {
       if (widget.currentPage < pageLengthIndex) {
         onToggleClicked(widget.currentPage + 1);
