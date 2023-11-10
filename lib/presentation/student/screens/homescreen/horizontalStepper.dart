@@ -118,4 +118,3 @@ class _MyCustomStepperState extends State<MyCustomStepper> {
   }
 }
 
-///changed to dup
