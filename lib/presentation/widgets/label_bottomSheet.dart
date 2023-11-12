@@ -167,6 +167,8 @@ class _labelBottomSheetState extends State<labelBottomSheet> {
                                 : showBottomSheetData(index, emptyList),
                             onTap: () {
                               textController.text = widget.listofData[index];
+                              print(
+                                  "Selected Index -----------------------: ${index}"); // Print the selected index to the console
                               Navigator.of(context).pop();
                             },
                           );

@@ -37,13 +37,11 @@ class _FamilyCardState extends State<FamilyCard> {
             padding: EdgeInsets.only(top: 5, bottom: 12),
             child: Text('Father', style: kfamiltTitleTextColor),
           ),
-
           const LabelName(labelText: 'Name'),
           const HeightSpacer(height: 14),
           const CheckBoxWorkout(
             width: 46,
           ),
-
           const HeightSpacer(height: 14),
           InputLabel(mytext: 'Occupation / Job'),
           labelBottomSheet(
@@ -68,24 +66,6 @@ class _FamilyCardState extends State<FamilyCard> {
               hintText: 'Search For Occupation / Job'),
           const HeightSpacer(height: 14),
           LabelNumericalText(mytext: 'Monthly Income'),
-          // Padding(
-          //   padding: const EdgeInsets.all(8.0),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-          //       Padding(
-          //         padding: const EdgeInsets.only(top: 10),
-          //         child: Container(
-          //             width: 90,
-          //             height: 36,
-          //             decoration: const BoxDecoration(
-          //                 borderRadius: BorderRadius.all(Radius.circular(2)),
-          //                 color: Color.fromARGB(221, 227, 223, 223)),
-          //             child: const Center(child: Text('or'))),
-          //       ),
-          //     ],
-          //   ),
-          // ),
           const LineDivider(),
           const Padding(
             padding: EdgeInsets.only(top: 5, bottom: 12),
